@@ -1,4 +1,4 @@
-type Length<T extends readonly unknown[]> = T["length"]
+type Length<T extends readonly unknown[]> = T["length"];
 
 /* _____________ 테스트 케이스 _____________ */
 import type { Equal, Expect } from '@type-challenges/utils';
