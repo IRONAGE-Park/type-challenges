@@ -1,7 +1,5 @@
-type HaveKey<T, U> = U extends keyof T ? never : T;
-
 type Chainable<T extends {} = {}> = {
-  option<K extends string, V>(key: K, value: V): HaveKey<T, K> extends never ? Chainable<Omit<T, K> & { [k in K]: V }> : Chainable<T & { [k in K]: V }>;
+  option<K extends string, V>(key: K extends keyof T ? never : K, value: V): Chainable<Omit<T, K> & { [k in K]: V }>;
   get(): T
 };
 
